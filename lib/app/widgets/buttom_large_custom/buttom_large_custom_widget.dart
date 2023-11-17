@@ -45,7 +45,6 @@ class _ButtonLargeCustomWidgetState extends State<ButtonLargeCustomWidget> {
                 fontWeight: FontWeight.w700,
                 fontSize: 20),
           ),
-          
         ),
       ),
     );

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:hardflix/app/services/navigator_service/navigator_custom_service.dart';
+import 'package:hardflix/app/views/home/home_view.dart';
 
 class SafeAreaCustomWidget extends StatelessWidget {
   const SafeAreaCustomWidget({super.key});
@@ -13,13 +15,17 @@ class SafeAreaCustomWidget extends StatelessWidget {
           top: 15.0,
         ),
         child: Row(
-          children: const [
-            Icon(
-              Icons.arrow_back,
-              size: 30,
-              color: Color(0xFF36848F),
+          children: [
+            GestureDetector(
+              onTap: () => NavigatorCustomService.push(
+                  context: context, pageName: const HomeView()),
+              child: const Icon(
+                Icons.arrow_back,
+                size: 30,
+                color: Color(0xFF36848F),
+              ),
             ),
-            Padding(
+            const Padding(
               padding: EdgeInsets.only(left: 58.0),
               child: Text(
                 'Hardflix',

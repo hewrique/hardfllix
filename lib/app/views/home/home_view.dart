@@ -18,50 +18,59 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: const Color(0x804EEAFF),
         body: GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
-      child: Container(
-        alignment: Alignment.center,
-        width: double.infinity,
-        height: double.infinity,
-        decoration: const BoxDecoration(color: Color(0x804EEAFF)),
-        child: SingleChildScrollView(
-            child: Column(
-          children: [
-            SizedBox(
-              child: Padding(
-                padding: const EdgeInsets.all(.0),
+          onTap: () => FocusScope.of(context).unfocus(),
+          child: Container(
+            alignment: Alignment.center,
+            width: double.infinity,
+            height: double.infinity,
+            child: SingleChildScrollView(
                 child: Column(
-                  children: [
-                    const LogoMarca(),
-                    ButtonLargeCustomWidget(
-                      buttonName: 'Cadastrar',
-                      onPressed: () => NavigatorCustomService.push(
-                          pageName: const RegisterMovieView(),
-                          context: context),
-                    ),
-                    ButtonLargeCustomWidget(
-                      buttonName: 'Exibir',
-                      onPressed: () => NavigatorCustomService.push(
-                          pageName: const ShowMovieView(), context: context),
-                    ),
-                    ButtonLargeCustomWidget(
-                      buttonName: 'Editar',
-                      onPressed: () => NavigatorCustomService.push(
-                          pageName: const EditMovieView(), context: context),
-                    ),
-                    ButtonLargeCustomWidget(
-                      buttonName: 'Excluir',
-                      onPressed: () => NavigatorCustomService.push(
-                          pageName: const DeleteMovieView(), context: context),
-                    ),
-                  ],
+              children: [
+                SizedBox(
+                  child: Column(
+                    children: [
+                      const LogoMarca(),
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 38.0, top: 30),
+                        child: ButtonLargeCustomWidget(
+                          buttonName: 'Cadastrar',
+                          onPressed: () => NavigatorCustomService.push(
+                              pageName: const RegisterMovieView(),
+                              context: context),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 38.0),
+                        child: ButtonLargeCustomWidget(
+                          buttonName: 'Exibir',
+                          onPressed: () => NavigatorCustomService.push(
+                              pageName: const ShowMovieView(),
+                              context: context),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 38.0),
+                        child: ButtonLargeCustomWidget(
+                          buttonName: 'Editar',
+                          onPressed: () => NavigatorCustomService.push(
+                              pageName: const EditMovieView(),
+                              context: context),
+                        ),
+                      ),
+                      ButtonLargeCustomWidget(
+                        buttonName: 'Excluir',
+                        onPressed: () => NavigatorCustomService.push(
+                            pageName: const DeleteMovieView(),
+                            context: context),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-            ),
-          ],
-        )),
-      ),
-    ));
+              ],
+            )),
+          ),
+        ));
   }
 }

@@ -17,68 +17,70 @@ class _LoginViewState extends State<LoginView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: GestureDetector(
-            onTap: () => FocusScope.of(context).unfocus(),
-            child: Container(
-                alignment: Alignment.center,
-                width: double.infinity,
-                height: double.infinity,
-                decoration: const BoxDecoration(color: Color(0x804EEAFF)),
-                child: SingleChildScrollView(
+      backgroundColor: const Color(0x804EEAFF),
+      body: GestureDetector(
+        onTap: () => FocusScope.of(context).unfocus(),
+        child: Container(
+          alignment: Alignment.center,
+          width: double.infinity,
+          height: double.infinity,
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                SizedBox(
                   child: Column(
                     children: [
-                      SizedBox(
-                        child: Column(
-                          children: [
-                            const LogoMarca(),
-                            const InputCustomWidget(
-                              inputTitle: "E-mail",
-                            ),
-                            const InputCustomWidget(
-                              inputTitle: "Senha",
-                              paddingBottom: 22.0,
-                            ),
-                            ButtonLargeCustomWidget(
-                              buttonName: 'Entrar',
-                              onPressed: () => NavigatorCustomService.push(
-                                  pageName: const HomeView(), context: context),
-                            ),
-                            const ButtonLargeCustomWidget(
-                                buttonName: 'Entrar com '),
-                            GestureDetector(
-                              onTap: () => NavigatorCustomService.push(
-                                  pageName: const CreateAccountView(),
-                                  context: context),
-                              child: const Text.rich(
-                                TextSpan(
-                                  children: [
-                                    TextSpan(
-                                      text: "Não tem conta? ",
-                                      style: TextStyle(
-                                          fontFamily: "Poppins",
-                                          color: Colors.black,
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.w600),
-                                    ),
-                                    TextSpan(
-                                      text: "Crie sua conta",
-                                      style: TextStyle(
-                                        fontFamily: "Poppins",
-                                        color: Colors.black,
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.w600,
-                                        decoration: TextDecoration.underline,
-                                      ),
-                                    ),
-                                  ],
+                      const LogoMarca(),
+                      const InputCustomWidget(
+                        inputTitle: "E-mail",
+                      ),
+                      const InputCustomWidget(
+                        inputTitle: "Senha",
+                        paddingBottom: 22.0,
+                      ),
+                      ButtonLargeCustomWidget(
+                        buttonName: 'Entrar',
+                        onPressed: () => NavigatorCustomService.push(
+                            pageName: const HomeView(), context: context),
+                      ),
+                      const ButtonLargeCustomWidget(buttonName: 'Entrar com '),
+                      GestureDetector(
+                        onTap: () => NavigatorCustomService.push(
+                            pageName: const CreateAccountView(),
+                            context: context),
+                        child: const Text.rich(
+                          TextSpan(
+                            children: [
+                              TextSpan(
+                                text: "Não tem conta? ",
+                                style: TextStyle(
+                                    fontFamily: "Poppins",
+                                    color: Colors.black,
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w600),
+                              ),
+                              TextSpan(
+                                text: "Crie sua conta",
+                                style: TextStyle(
+                                  fontFamily: "Poppins",
+                                  color: Colors.black,
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w600,
+                                  decoration: TextDecoration.underline,
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                     ],
                   ),
-                ))));
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }
